@@ -1,58 +1,34 @@
 (function () {
-
   "use strict";
-
-  /*
-   * This is your One Happy Bar menu.
-   * The customer must check the policy box
-   * before the button becomes active.
-   */
 
   const MENU_URL =
     "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
 
-  const checkbox =
-    document.getElementById("policy-check");
+  const checkbox = document.getElementById("policy-check");
+  const continueBtn = document.getElementById("continue-btn");
 
-  const continueButton =
-    document.getElementById("continue-btn");
+  if (!checkbox || !continueBtn) return;
 
+  function syncButton() {
+    const checked = checkbox.checked;
 
-  function updateButton() {
-
-    if (checkbox.checked) {
-
-      continueButton.disabled = false;
-
-    } else {
-
-      continueButton.disabled = true;
-
-    }
-
+    continueBtn.disabled = !checked;
+    continueBtn.setAttribute(
+      "aria-disabled",
+      String(!checked)
+    );
   }
 
+  checkbox.addEventListener("change", syncButton);
 
-  checkbox.addEventListener(
-    "change",
-    updateButton
-  );
+  syncButton();
 
+  continueBtn.addEventListener("click", function () {
 
-  continueButton.addEventListener(
-    "click",
-    function () {
+    if (continueBtn.disabled) return;
 
-      if (!checkbox.checked) {
-        return;
-      }
+    window.location.href = MENU_URL;
 
-      window.location.href = MENU_URL;
-
-    }
-  );
-
-
-  updateButton();
+  });
 
 })();
