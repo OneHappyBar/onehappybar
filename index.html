@@ -1,106 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>One Happy Bar | Welcome</title>
+  <meta name="description" content="One Happy Bar Aruba - Welcome and House Policies">
+  <meta name="theme-color" content="#0a4d68">
 
-<meta name="description" content="Welcome to One Happy Bar Aruba">
+  <title>One Happy Bar | Welcome</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="overlay">
+  <div class="page">
 
-<div class="card">
+    <div class="glass-card">
 
-<img src="logo.png" alt="One Happy Bar" class="logo">
+      <!-- LOGO -->
+      <div class="logo-container">
+        <img src="logo.png" alt="One Happy Bar" class="logo">
+      </div>
 
-<h1>Welcome!</h1>
+      <!-- WELCOME -->
+      <h1>Welcome!</h1>
 
-<p class="subtitle">
-Before viewing our menu, please take a moment to review our house policies.
-</p>
+      <p class="intro">
+        Before viewing our menu, please take a moment to review our house policies.
+      </p>
 
-<div class="rule">
+      <!-- POLICY 1 -->
+      <div class="policy">
+        <div class="icon">🚫</div>
 
-<div class="icon">🚫</div>
+        <div>
+          <h2>No Outside Food or Drinks</h2>
+          <p>
+            Outside food and beverages are not permitted.
+          </p>
+        </div>
+      </div>
 
-<div>
+      <!-- POLICY 2 -->
+      <div class="policy">
+        <div class="icon">🍹</div>
 
-<h3>No Outside Food or Drinks</h3>
+        <div>
+          <h2>Seating Policy</h2>
+          <p>
+            Seating is reserved exclusively for One Happy Bar patrons.
+          </p>
+        </div>
+      </div>
 
-<p>
-Outside food and beverages are not permitted.
-</p>
+      <!-- POLICY 3 -->
+      <div class="policy">
+        <div class="icon dollar">$</div>
 
-</div>
+        <div>
+          <h2>Minimum Purchase</h2>
+          <p>
+            A minimum purchase of <strong>$35 USD</strong> is required.
+          </p>
+        </div>
+      </div>
 
-</div>
+      <!-- AGREEMENT -->
+      <label class="agreement">
+        <input type="checkbox" id="policy-check">
 
-<div class="rule">
+        <span class="checkmark">✓</span>
 
-<div class="icon">🍹</div>
+        <span>
+          I have read and agree to these policies.
+        </span>
+      </label>
 
-<div>
+      <!-- CONTINUE -->
+      <button id="continue-btn" disabled>
+        Continue to Menu
+        <span>➜</span>
+      </button>
 
-<h3>Seating Policy</h3>
+      <div class="footer">
+        ONE HAPPY BAR · ARUBA
+      </div>
 
-<p>
-Seating is reserved exclusively for One Happy Bar patrons.
-</p>
+    </div>
 
-</div>
+  </div>
 
-</div>
-
-<div class="rule">
-
-<div class="icon">💲</div>
-
-<div>
-
-<h3>Minimum Purchase</h3>
-
-<p>
-A minimum purchase of <strong>$35 USD per person</strong> is required.
-</p>
-
-</div>
-
-</div>
-
-<label class="agree">
-
-<input type="checkbox" id="agree">
-
-<span>
-I have read and agree to these policies.
-</span>
-
-</label>
-
-<button id="continue" disabled>
-
-Continue to Menu →
-
-</button>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
-
 </html>
