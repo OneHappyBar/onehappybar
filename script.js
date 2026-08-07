@@ -1,24 +1,21 @@
-(function () {
-  "use strict";
+document.addEventListener("DOMContentLoaded", function () {
 
-  const MENU_URL =
-    "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
+    const checkbox = document.getElementById("agree");
+    const button = document.getElementById("continue");
 
-  const checkbox = document.getElementById("policy-check");
-  const continueBtn = document.getElementById("continue-btn");
+    // Your Google Drive menu
+    const menuURL = "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
 
-  if (!checkbox || !continueBtn) return;
+    button.disabled = true;
 
-  function syncButton() {
-    continueBtn.disabled = !checkbox.checked;
-  }
+    checkbox.addEventListener("change", function () {
+        button.disabled = !checkbox.checked;
+    });
 
-  checkbox.addEventListener("change", syncButton);
-  syncButton();
+    button.addEventListener("click", function () {
+        if (checkbox.checked) {
+            window.location.href = menuURL;
+        }
+    });
 
-  continueBtn.addEventListener("click", function () {
-    if (continueBtn.disabled) return;
-
-    window.open(MENU_URL, "_blank");
-  });
-})();
+});
