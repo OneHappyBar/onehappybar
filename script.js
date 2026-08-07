@@ -1,21 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-    const checkbox = document.getElementById("agree");
-    const button = document.getElementById("continue");
+  "use strict";
 
-    // Your Google Drive menu
-    const menuURL = "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
+  /*
+   * This is your One Happy Bar menu.
+   * The customer must check the policy box
+   * before the button becomes active.
+   */
 
-    button.disabled = true;
+  const MENU_URL =
+    "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
 
-    checkbox.addEventListener("change", function () {
-        button.disabled = !checkbox.checked;
-    });
+  const checkbox =
+    document.getElementById("policy-check");
 
-    button.addEventListener("click", function () {
-        if (checkbox.checked) {
-            window.location.href = menuURL;
-        }
-    });
+  const continueButton =
+    document.getElementById("continue-btn");
 
-});
+
+  function updateButton() {
+
+    if (checkbox.checked) {
+
+      continueButton.disabled = false;
+
+    } else {
+
+      continueButton.disabled = true;
+
+    }
+
+  }
+
+
+  checkbox.addEventListener(
+    "change",
+    updateButton
+  );
+
+
+  continueButton.addEventListener(
+    "click",
+    function () {
+
+      if (!checkbox.checked) {
+        return;
+      }
+
+      window.location.href = MENU_URL;
+
+    }
+  );
+
+
+  updateButton();
+
+})();
