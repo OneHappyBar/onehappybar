@@ -327,6 +327,19 @@ h1 {
 
 
 /* =========================================================
+   $35 MINIMUM PURCHASE NOTE
+   ========================================================= */
+
+.minimum-note {
+  color: #ffd43d !important;
+
+  font-weight: 500;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
    AGREEMENT CHECKBOX
    ========================================================= */
 
@@ -575,6 +588,13 @@ h1 {
     font-size: 0.9rem;
   }
 
+  .minimum-note {
+    color: #ffd43d !important;
+    font-size: 0.9rem !important;
+    font-weight: 500;
+    font-style: italic;
+  }
+
   .agreement {
     margin-left: 2px;
     margin-right: 2px;
@@ -638,6 +658,10 @@ h1 {
 
   .policy-content p {
     font-size: 0.82rem;
+  }
+
+  .minimum-note {
+    font-size: 0.82rem !important;
   }
 
 }
