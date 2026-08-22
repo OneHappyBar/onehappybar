@@ -2,60 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>One Happy Bar Menu</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#04122d;
 font-family:Arial,sans-serif;
+overflow-x:hidden;
 }
+
+/* Each page */
 
 .menu-page{
 width:100%;
-display:block;
+display:flex;
+justify-content:center;
+padding:0;
 }
+
+/* Images */
 
 .menu-page img{
-width:100%;
-height:auto;
 display:block;
+width:100%;
+max-width:720px;
+height:auto;
 }
-</style>
 
+/* Floating Top Button */
+
+#topBtn{
+
+position:fixed;
+
+bottom:22px;
+right:18px;
+
+width:52px;
+height:52px;
+
+border:none;
+border-radius:50%;
+
+background:#ffb400;
+color:#04122d;
+
+font-size:24px;
+font-weight:bold;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+transition:.25s;
+}
+
+#topBtn:hover{
+
+transform:translateY(-2px);
+
+background:#ffc533;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="menu-page">
-<img src="page1.jpg" alt="Hot Paninis">
+<img src="page1.jpg.png" alt="Hot Panini's">
 </div>
 
 <div class="menu-page">
-<img src="page2.jpg" alt="Beer Selection">
+<img src="page2.jpg.png" alt="Beer Selection">
 </div>
 
 <div class="menu-page">
-<img src="page3.jpg" alt="Wine Selection">
+<img src="page3.jpg.png" alt="Wine Selection">
 </div>
 
 <div class="menu-page">
-<img src="page4.jpg" alt="Our Cocktails">
+<img src="page4.jpg.png" alt="Our Cocktails">
 </div>
 
 <div class="menu-page">
-<img src="page5.jpg" alt="Martinis">
+<img src="page5.jpg.png" alt="Martini's and More">
 </div>
 
 <div class="menu-page">
-<img src="page6.jpg" alt="Non Alcoholic Drinks">
+<img src="page6.jpg.png" alt="Non Alcoholic and More">
 </div>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+<script>
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+topBtn.style.display=window.scrollY>500?"block":"none";
+
+});
+
+</script>
 
 </body>
 </html>
