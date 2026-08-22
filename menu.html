@@ -9,95 +9,66 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:#04122d;
-  font-family:Arial,sans-serif;
-  overflow-x:hidden;
-  scroll-snap-type:y mandatory;
+    background:#04122d;
+    overflow-x:hidden;
+    font-family:Arial,sans-serif;
 }
-
-/* Loading Screen */
-
-.loader{
-  position:fixed;
-  inset:0;
-  background:#04122d;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  font-size:22px;
-  z-index:999;
-  transition:.4s;
-}
-
-.loader.hide{
-  opacity:0;
-  visibility:hidden;
-}
-
-/* Menu Pages */
 
 .page{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  scroll-snap-align:start;
-  background:#04122d;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#04122d;
 }
 
 .page img{
-  width:100%;
-  max-width:720px;
-  height:auto;
-  display:block;
+    width:100%;
+    max-width:720px;
+    height:auto;
+    display:block;
 }
 
-/* Back To Top */
+/* Back to top button */
 
 #topBtn{
 
-  position:fixed;
+    position:fixed;
 
-  bottom:22px;
-  right:18px;
+    bottom:20px;
+    right:20px;
 
-  width:54px;
-  height:54px;
+    width:52px;
+    height:52px;
 
-  border:none;
-  border-radius:50%;
+    border:none;
+    border-radius:50%;
 
-  background:#ffb400;
-  color:#04122d;
+    background:#ffb400;
+    color:#04122d;
 
-  font-size:24px;
-  font-weight:bold;
+    font-size:24px;
+    font-weight:bold;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  display:none;
+    display:none;
 
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
-
-  transition:.25s;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
 #topBtn:hover{
-
-  transform:translateY(-2px);
-
-  background:#ffc533;
+    background:#ffc533;
 }
 
 </style>
@@ -105,58 +76,48 @@ body{
 
 <body>
 
-<div id="loader" class="loader">
-🍹 Loading Menu...
+<div class="page">
+    <img src="page1.png" alt="Hot Panini's">
 </div>
 
-<section class="page">
-<img src="page1.png" alt="Hot Panini's">
-</section>
+<div class="page">
+    <img src="page2.png" alt="Beer Selection">
+</div>
 
-<section class="page">
-<img src="page2.png" alt="Beer Selection">
-</section>
+<div class="page">
+    <img src="page3.png" alt="Wine Selection">
+</div>
 
-<section class="page">
-<img src="page3.png" alt="Wine Selection">
-</section>
+<div class="page">
+    <img src="page4.png" alt="Our Cocktails">
+</div>
 
-<section class="page">
-<img src="page4.png" alt="Our Cocktails">
-</section>
+<div class="page">
+    <img src="page5.png" alt="Martini's and More">
+</div>
 
-<section class="page">
-<img src="page5.png" alt="Martini's and More">
-</section>
-
-<section class="page">
-<img src="page6.png" alt="Non Alcoholic and More">
-</section>
+<div class="page">
+    <img src="page6.png" alt="Non Alcoholic and More">
+</div>
 
 <button id="topBtn">↑</button>
 
 <script>
 
-window.addEventListener("load",function(){
-
-document.getElementById("loader").classList.add("hide");
-
-});
-
 const topBtn=document.getElementById("topBtn");
 
-window.addEventListener("scroll",function(){
+window.addEventListener("scroll",()=>{
 
-topBtn.style.display=window.scrollY>600?"block":"none";
+    topBtn.style.display=window.scrollY>500?"block":"none";
 
 });
 
-topBtn.addEventListener("click",function(){
+topBtn.addEventListener("click",()=>{
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
