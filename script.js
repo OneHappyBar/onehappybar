@@ -27,7 +27,7 @@
 
     if (continueBtn.disabled) return;
 
-    window.location.href = MENU_URL;
+    window.location.href = "menu/menu.html";
 
   });
 
