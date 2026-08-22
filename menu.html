@@ -3,124 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <title>One Happy Bar Menu</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-    background:#04122d;
-    overflow-x:hidden;
-    font-family:Arial,sans-serif;
+  background:#04122d;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden;
 }
-
 .page{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#04122d;
+  display:flex;
+  justify-content:center;
 }
-
 .page img{
-    width:100%;
-    max-width:720px;
-    height:auto;
-    display:block;
+  width:100%;
+  max-width:720px;
+  display:block;
 }
-
-/* Back to top button */
-
 #topBtn{
-
-    position:fixed;
-
-    bottom:20px;
-    right:20px;
-
-    width:52px;
-    height:52px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#ffb400;
-    color:#04122d;
-
-    font-size:24px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    display:none;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+  background:#ffb400;
+  color:#04122d;
+  font-size:24px;
+  cursor:pointer;
+  display:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
-
-#topBtn:hover{
-    background:#ffc533;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="page">
-    <img src="page1.png" alt="Hot Panini's">
-</div>
-
-<div class="page">
-    <img src="page2.png" alt="Beer Selection">
-</div>
-
-<div class="page">
-    <img src="page3.png" alt="Wine Selection">
-</div>
-
-<div class="page">
-    <img src="page4.png" alt="Our Cocktails">
-</div>
-
-<div class="page">
-    <img src="page5.png" alt="Martini's and More">
-</div>
-
-<div class="page">
-    <img src="page6.png" alt="Non Alcoholic and More">
-</div>
+<div id="menu"></div>
 
 <button id="topBtn">↑</button>
 
 <script>
+// Detect the correct GitHub Pages base path automatically
+const base = window.location.pathname.includes("/onehappybar/")
+  ? "/onehappybar/"
+  : "/";
 
-const topBtn=document.getElementById("topBtn");
+const menu = document.getElementById("menu");
+
+for(let i=1;i<=6;i++){
+  const page=document.createElement("div");
+  page.className="page";
+
+  const img=document.createElement("img");
+  img.src=`${base}page${i}.png`;
+  img.alt=`Menu Page ${i}`;
+
+  page.appendChild(img);
+  menu.appendChild(page);
+}
+
+const btn=document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
-
-    topBtn.style.display=window.scrollY>500?"block":"none";
-
+  btn.style.display=window.scrollY>500?"block":"none";
 });
 
-topBtn.addEventListener("click",()=>{
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
+btn.onclick=()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+};
 </script>
 
 </body>
