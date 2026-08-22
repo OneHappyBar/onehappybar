@@ -1,21 +1,16 @@
 (function () {
   "use strict";
 
-  const MENU_URL =
-    "https://drive.google.com/file/d/1yyOcCgscMV14FsomOX1TEvpQH_3NKVpe/preview";
-
   const checkbox = document.getElementById("policy-check");
   const continueBtn = document.getElementById("continue-btn");
 
   if (!checkbox || !continueBtn) return;
 
   function syncButton() {
-    const checked = checkbox.checked;
-
-    continueBtn.disabled = !checked;
+    continueBtn.disabled = !checkbox.checked;
     continueBtn.setAttribute(
       "aria-disabled",
-      String(!checked)
+      String(!checkbox.checked)
     );
   }
 
